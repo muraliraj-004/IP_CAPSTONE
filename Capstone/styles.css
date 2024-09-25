@@ -1,0 +1,23 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark blue with transparency */
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+nav img {
+    width: 50px;
+    height: auto;
+    margin-right: 15px;
+}
+nav a {
+    color: rgb(255, 255, 255); /* White text */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: #ffcc00; /* Gold color on hover */
+}

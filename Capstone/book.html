@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Ticket - Flight Reservation System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E0F7FA; /* Light teal background */
+        }
+        header {
+            background-image: url('flight-background.jpg'); /* Add a relevant image */
+            background-size: cover;
+            background-position: center;
+            color: rgba(0, 0, 0, 0.632);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 2.5rem;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background-color: #1E88E5; /* Bright blue */
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            border-bottom: 2px solid white;
+        }
+        .auth-links a {
+            background-color: white;
+            color: #1E88E5;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .auth-links a:hover {
+            background-color: #1E88E5;
+            color: white;
+        }
+        /* Book page container */
+        .book-container {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 100px auto 0 auto;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .book-container h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #1E88E5;
+        }
+        .booking-form {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .booking-form label {
+            font-size: 1.1rem;
+            color: #1E88E5;
+        }
+        .booking-form input, .booking-form select {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .booking-form button {
+            background-color: #1E88E5;
+            color: white;
+            padding: 12px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .booking-form button:hover {
+            background-color: #1565C0;
+        }
+        /* Flights table styles */
+        .flights-table {
+            margin-top: 40px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .flights-table th, .flights-table td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+        .flights-table th {
+            background-color: #1E88E5;
+            color: white;
+        }
+        footer {
+            background-color: #1E88E5;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Book a Ticket</h1>
+    </header>
+
+    <nav>
+        <div style="display: flex; align-items: center;">
+            <img src="logo.jpg" alt="Logo" style="height: 50px;">
+            <div>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="book.html">Book a Ticket</a>
+            </div>
+        </div>
+        <div class="auth-links">
+            <a href="sign.html">Sign In</a>
+            <a href="registration.html">Register</a>
+        </div>
+    </nav>
+
+    <div class="book-container">
+        <h2>Plan Your Next Trip with FlyEase</h2>
+        <form class="booking-form" id="booking-form">
+            <label for="departure">Departure City</label>
+            <input type="text" id="departure" name="departure" placeholder="Enter departure city" required>
+
+            <label for="destination">Destination City</label>
+            <input type="text" id="destination" name="destination" placeholder="Enter destination city" required>
+
+            <label for="date">Departure Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="class">Class</label>
+            <select id="class" name="class" required>
+                <option value="economy">Economy</option>
+                <option value="business">Business</option>
+                <option value="first">First Class</option>
+            </select>
+
+            <button type="submit">Search Flights</button>
+        </form>
+
+        <table class="flights-table" id="flights-table" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Flight Number</th>
+                    <th>Departure</th>
+                    <th>Destination</th>
+                    <th>Date</th>
+                    <th>Class</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="flights-body">
+                <!-- Flight data will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Flight Reservation System. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Sample flight data for demonstration
+        const sampleFlights = [
+            { number: "FL123", departure: "Chennai", destination: "Delhi", date: "2024-10-10", class: "economy", price: "$200" },
+            { number: "FL456", departure: "Delhi", destination: "Chennai", date: "2024-10-15", class: "business", price: "$500" },
+            { number: "FL789", departure: "Houston", destination: "Seattle", date: "2024-10-20", class: "first", price: "$800" },
+            { number: "FL101", departure: "New York", destination: "Miami", date: "2024-10-10", class: "economy", price: "$250" },
+            { number: "FL202", departure: "Los Angeles", destination: "Chicago", date: "2024-10-15", class: "first", price: "$600" },
+            { number: "FL303", departure: "Miami", destination: "Houston", date: "2024-10-20", class: "business", price: "$450" },
+        ];
+    
+        document.getElementById('booking-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+    
+            // Get form values
+            const departure = document.getElementById('departure').value.trim().toLowerCase();
+            const destination = document.getElementById('destination').value.trim().toLowerCase();
+            const date = document.getElementById('date').value;
+            const selectedClass = document.getElementById('class').value;
+    
+            // Debugging: Log input values
+            console.log("Departure:", departure);
+            console.log("Destination:", destination);
+            console.log("Date:", date);
+            console.log("Class:", selectedClass);
+    
+            // Clear the table body
+            const flightsBody = document.getElementById('flights-body');
+            flightsBody.innerHTML = '';
+    
+            // Filter and display the flights based on search criteria
+            const filteredFlights = sampleFlights.filter(flight => 
+                flight.departure.toLowerCase() === departure &&
+                flight.destination.toLowerCase() === destination &&
+                flight.date === date &&
+                flight.class === selectedClass
+            );
+    
+            // Debugging: Log filtered flights
+            console.log("Filtered Flights:", filteredFlights);
+    
+            // Populate the table with filtered flights
+            if (filteredFlights.length > 0) {
+                filteredFlights.forEach(flight => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${flight.number}</td>
+                        <td>${flight.departure}</td>
+                        <td>${flight.destination}</td>
+                        <td>${flight.date}</td>
+                        <td>${flight.class.charAt(0).toUpperCase() + flight.class.slice(1)}</td>
+                        <td>${flight.price}</td>
+                    `;
+                    flightsBody.appendChild(row);
+                });
+                document.getElementById('flights-table').style.display = 'table'; // Show the table
+            } else {
+                // If no flights are found
+                const row = document.createElement('tr');
+                row.innerHTML = `<td colspan="6">No flights available</td>`;
+                flightsBody.appendChild(row);
+                document.getElementById('flights-table').style.display = 'table'; // Show the table
+            }
+        });
+    </script>
+    
+    
+
+</body>
+</html>

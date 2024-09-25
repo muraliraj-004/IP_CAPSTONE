@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Flight Reservation System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E0F7FA; /* Light teal background */
+        }
+        header {
+            background-image: url('flight-background.jpg'); /* Add a relevant image */
+            background-size: cover;
+            background-position: center;
+            color: rgba(0, 0, 0, 0.632);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 2.5rem;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background-color: #1E88E5; /* Bright blue */
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            border-bottom: 2px solid white;
+        }
+        .auth-links a {
+            background-color: white;
+            color: #1E88E5;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .auth-links a:hover {
+            background-color: #1E88E5;
+            color: white;
+        }
+        /* Adding extra spacing before about-container */
+        .about-container {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 100px auto 0 auto; /* Increased margin-top to 100px */
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .about-container h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #1E88E5;
+        }
+        .about-container p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        .key-points {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .key-points div {
+            flex: 1;
+            background-color: #F1F8E9;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .key-points div h3 {
+            color: #1E88E5;
+        }
+        footer {
+            background-color: #1E88E5;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>About Us</h1>
+    </header>
+
+    <nav>
+        <div style="display: flex; align-items: center;">
+            <img src="logo.jpg" alt="Logo" style="height: 50px;">
+            <div>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="book.html">Book a Ticket</a>
+            </div>
+        </div>
+        <div class="auth-links">
+            <a href="sign.html">Sign In</a>
+            <a href="registration.html">Register</a>
+        </div>
+    </nav>
+
+    <div class="about-container">
+        <h2>About Our Flight Reservation System</h2>
+        <p>At FlyEase, we believe that travel is one of life's greatest adventures. Our mission is to make air travel accessible, convenient, and enjoyable for everyone. Established in 1990, we have grown to become a trusted partner for millions of travelers around the world.</p>
+
+        <div class="key-points">
+            <div>
+                <h3>Convenient Booking</h3>
+                <p>Our system offers a wide range of options, including domestic and international flights with advanced search and booking tools.</p>
+            </div>
+            <div>
+                <h3>24/7 Support</h3>
+                <p>We pride ourselves on our exceptional customer service available round the clock to assist you with all your needs.</p>
+            </div>
+            <div>
+                <h3>Eco-Friendly</h3>
+                <p>Committed to sustainability, we work closely with eco-friendly airlines to reduce the carbon footprint of air travel.</p>
+            </div>
+        </div>
+        
+        <p>Whether you're planning a business trip, a family vacation, or a spontaneous getaway, we’re here to help you every step of the way. Join us as we continue to innovate and enhance the travel experience, making your journeys unforgettable!</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Flight Reservation System. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

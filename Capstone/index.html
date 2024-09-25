@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Reservation System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://images.hdqwalls.com/wallpapers/passenger-airplane-4k-et.jpg') no-repeat center center;
+            background-size: cover;
+            color: #333;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 400%;
+        }
+        h2{
+            font-size: 200%;
+        }
+        header {
+            background-color: rgba(120, 98, 17, 0.873); 
+            color: rgb(255, 255, 255);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8); /* Dark blue with transparency */
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        nav img {
+            width: 50px;
+            height: auto;
+            margin-right: 15px;
+        }
+        nav a {
+            color: rgb(255, 255, 255); /* White text */
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffcc00; /* Gold color on hover */
+        }
+        .auth-links {
+            margin-left: auto;
+        }
+        .content {
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #090404; 
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+        }
+        .content h1 {
+            font-size: 4em;
+            margin: 0;
+        }
+        .content p {
+            font-size: 1.5em;
+        }
+        footer {
+            background-color: rgba(18, 18, 17, 0.8); 
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Welcome to FlyEase</h1>
+        <h2>Book with Ease, Fly with Peace</h2>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div style="display: flex; align-items: center;">
+            <img src="logo.jpg" alt="Logo"> <!-- Replace with your logo URL -->
+            <div>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="book.html">Book a Ticket</a>
+            </div>
+        </div>
+        <div class="auth-links">
+            <a href="sign.html">Sign In</a>
+            <a href="registration.html">Register</a>
+        </div>
+    </nav>
+
+    <!-- Main Content: Centered Text -->
+    <div class="content">
+        <h1>Flight Reservation System</h1>
+        <p>Book Your Tickets Easily and Comfortably</p>
+        <p>Today's Date: September 24, 2024</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Flight Reservation System. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
